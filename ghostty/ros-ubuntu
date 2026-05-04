@@ -1,0 +1,5 @@
+# Force Ghostty to run the container instead of Fish
+command = distrobox enter ubuntu-22.04 -- /bin/bash -l
+
+# Optional: Give it a specific theme so you know you are in Ubuntu
+theme = Atom

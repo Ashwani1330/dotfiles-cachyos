@@ -1,0 +1,39 @@
+    layout {
+        gaps 8 // Gap between windows
+        center-focused-column "never" // Don’t auto-center focused column
+
+        background-color "transparent" // <- needed for noctalia-shell to set wallpaper
+
+        preset-column-widths {
+            proportion 0.33333
+            proportion 0.5
+            proportion 0.66667
+        }
+
+        // Niri's focus ring draws OUTSIDE the window, making it the perfect active indicator
+        focus-ring {
+            width 2
+
+            // Your Hyprland purple gradient
+            active-gradient from="#9b89b8" to="#7a648e" angle=45 relative-to="workspace-view"
+
+            // The solid grey for inactive windows
+            inactive-color "#595959"
+        }
+
+        // Turn off the inner border since the focus-ring now handles both active and inactive states
+        border {
+            off
+        }
+
+        // Apply your Hyprland shadows
+        shadow {
+            on
+            softness 4       // Matches Hyprland's shadow range
+            spread 0
+            offset x=0 y=2   // Slight drop shadow effect
+            color "#1a1a1a"  // Matches your rgba(1a1a1aee)
+        }
+
+        struts {}
+    }
