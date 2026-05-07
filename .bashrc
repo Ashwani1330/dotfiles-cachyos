@@ -46,11 +46,13 @@ if [ -f /opt/ros/jazzy/setup.bash ] || [ -f /opt/ros/humble/setup.bash ]; then
     fi
 
     export ROS_DOMAIN_ID=10
-    export RMW_IMPLEMENTATION=rmw_fastrtps_cpp
+    # export RMW_IMPLEMENTATION=rmw_fastrtps_cpp
+    export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 
     # Using $HOME makes this portable across different machines/usernames
-    export FASTRTPS_DEFAULT_PROFILES_FILE="$HOME/fastdds_profile.xml"
-    export ROS_DISABLE_SHARED_MEMORY=1
+    # export FASTRTPS_DEFAULT_PROFILES_FILE="$HOME/fastdds_profile.xml"
+    export CYCLONEDDS_URI=file:///home/<user>/cyclonedds.xml
+    # export ROS_DISABLE_SHARED_MEMORY=1
 
     # 4. Universal Build Helper
     build() {
