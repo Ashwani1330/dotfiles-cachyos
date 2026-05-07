@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<profiles xmlns="http://eprosima.com/XMLSchemas/fastRTPS_Profiles">
+  <participant profile_name="unicast_discovery" is_default_profile="true">
+      <rtps>
+          <builtin>
+              <initialPeersList>
+                  <locator>
+                      <udpv4>
+                          <address>192.168.1.40</address>
+                      </udpv4>
+                  </locator>
+              </initialPeersList>
+          </builtin>
+      </rtps>
+  </participant>
+</profiles>
