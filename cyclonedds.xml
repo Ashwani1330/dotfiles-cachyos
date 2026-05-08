@@ -5,6 +5,8 @@
             <Interfaces>
                 <!-- Make sure wlan0 is exactly what shows up when you run 'ip a' -->
                 <NetworkInterface name="wlan0"/>
+                <!-- Enable multicast in lo via sudo ip .. -->
+                <NetworkInterface name="lo"/>
             </Interfaces>
             <AllowMulticast>true</AllowMulticast>
         </General>
