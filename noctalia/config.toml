@@ -1,0 +1,50 @@
+[shell]
+font_family = "Adwaita Sans"
+polkit_agent = true
+
+[bar.default]
+thickness = 38
+background_opacity = 0.9
+radius = 14
+margin_ends = 12
+margin_edge = 8
+padding = 10
+widget_spacing = 8
+shadow = true
+capsule = true
+capsule_fill = "surface_variant"
+capsule_opacity = 0.75
+capsule_padding = 6
+start = ["launcher", "workspaces", "media"]
+center = ["clock"]
+end = ["tray", "group:connectivity", "volume", "battery", "notifications", "control-center"]
+
+[[bar.default.capsule_group]]
+id = "connectivity"
+members = ["network", "connectivity-divider", "bluetooth"]
+widget_spacing = 6
+
+[widget.connectivity-divider]
+type = "text"
+text = "│"
+color = "outline"
+font_scale = 0.8
+interactive = false
+capsule = false
+
+[widget.clock]
+format = "{:%a %d %b  %H:%M}"
+
+[widget.volume]
+show_label = false
+
+[wallpaper]
+directory = "/home/ashwani/Pictures/Wallpapers"
+fill_mode = "crop"
+transition_duration = 1500
+
+[theme]
+mode = "dark"
+source = "wallpaper"
+builtin = "Ayu"
+wallpaper_scheme = "m3-tonal-spot"
