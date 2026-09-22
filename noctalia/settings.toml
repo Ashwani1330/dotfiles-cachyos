@@ -12,14 +12,40 @@ auto_locate = true
 [lockscreen_widgets]
 enabled = true
 schema_version = 2
-widget_order = [ "lockscreen-clock", "lockscreen-viz", "lockscreen-login-box@eDP-1" ]
+widget_order = [
+    "lockscreen-clock@eDP-1",
+    "lockscreen-viz@eDP-1",
+    "lockscreen-login-box@eDP-1",
+    "lockscreen-clock@HDMI-A-1",
+    "lockscreen-viz@HDMI-A-1",
+    "lockscreen-login-box@HDMI-A-1"
+]
 
     [lockscreen_widgets.grid]
     cell_size = 16
     major_interval = 4
     visible = true
 
-    [lockscreen_widgets.widget.lockscreen-clock]
+    [lockscreen_widgets.widget."lockscreen-clock@HDMI-A-1"]
+    box_height = 72.0
+    box_width = 400.0
+    cx = 960.0
+    cy = 300.0
+    output = "HDMI-A-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "clock"
+
+        [lockscreen_widgets.widget."lockscreen-clock@HDMI-A-1".settings]
+        background = false
+        center_text = true
+        clock_style = "digital"
+        color = "on_surface"
+        format = "{:%H:%M}"
+        shadow = true
+
+    [lockscreen_widgets.widget."lockscreen-clock@eDP-1"]
     box_height = 72.0
     box_width = 400.0
     cx = 960.0
@@ -30,7 +56,7 @@ widget_order = [ "lockscreen-clock", "lockscreen-viz", "lockscreen-login-box@eDP
     rotation = 0.0
     type = "clock"
 
-        [lockscreen_widgets.widget.lockscreen-clock.settings]
+        [lockscreen_widgets.widget."lockscreen-clock@eDP-1".settings]
         background = false
         center_text = true
         clock_style = "digital"
@@ -38,9 +64,36 @@ widget_order = [ "lockscreen-clock", "lockscreen-viz", "lockscreen-login-box@eDP
         format = "{:%H:%M}"
         shadow = true
 
+    [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1"]
+    box_height = 82.0
+    box_width = 720.0
+    cx = 960.0
+    cy = 820.0
+    output = "HDMI-A-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.81999999999999995
+        background_radius = 20.0
+        center_password_text = true
+        input_opacity = 0.78000000000000003
+        input_radius = 12.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = false
+        show_login_button = true
+        show_media = false
+        show_session_buttons = false
+        show_unlock_hint = false
+        show_weather = false
+
     [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
-    box_height = 150.0
-    box_width = 560.0
+    box_height = 82.0
+    box_width = 720.0
     cx = 960.0
     cy = 820.0
     output = "eDP-1"
@@ -65,7 +118,27 @@ widget_order = [ "lockscreen-clock", "lockscreen-viz", "lockscreen-login-box@eDP
         show_unlock_hint = false
         show_weather = false
 
-    [lockscreen_widgets.widget.lockscreen-viz]
+    [lockscreen_widgets.widget."lockscreen-viz@HDMI-A-1"]
+    box_height = 72.0
+    box_width = 420.0
+    cx = 960.0
+    cy = 410.0
+    output = "HDMI-A-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "audio_visualizer"
+
+        [lockscreen_widgets.widget."lockscreen-viz@HDMI-A-1".settings]
+        background = false
+        bands = 32
+        centered = true
+        color_1 = "tertiary"
+        color_2 = "primary"
+        mirrored = true
+        show_when_idle = false
+
+    [lockscreen_widgets.widget."lockscreen-viz@eDP-1"]
     box_height = 72.0
     box_width = 420.0
     cx = 960.0
@@ -76,7 +149,7 @@ widget_order = [ "lockscreen-clock", "lockscreen-viz", "lockscreen-login-box@eDP
     rotation = 0.0
     type = "audio_visualizer"
 
-        [lockscreen_widgets.widget.lockscreen-viz.settings]
+        [lockscreen_widgets.widget."lockscreen-viz@eDP-1".settings]
         background = false
         bands = 32
         centered = true
@@ -104,3 +177,6 @@ path = "/home/ashwani/Pictures/Wallpapers/wallhaven-k8kxdm.jpg"
 
 [wallpaper.monitors.eDP-1]
 path = "/home/ashwani/Pictures/Wallpapers/wallhaven-k8kxdm.jpg"
+
+[widget.control-center]
+glyph = "north-star"

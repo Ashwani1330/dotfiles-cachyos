@@ -17,14 +17,27 @@ capsule_opacity = 0.75
 capsule_padding = 6
 start = ["launcher", "workspaces", "media"]
 center = ["clock"]
-end = ["tray", "group:connectivity", "volume", "battery", "notifications", "control-center"]
+end = ["tray", "group:connectivity", "group:levels", "battery", "notifications", "control-center"]
 
 [[bar.default.capsule_group]]
 id = "connectivity"
 members = ["network", "connectivity-divider", "bluetooth"]
 widget_spacing = 6
 
+[[bar.default.capsule_group]]
+id = "levels"
+members = ["volume", "levels-divider", "brightness"]
+widget_spacing = 6
+
 [widget.connectivity-divider]
+type = "text"
+text = "│"
+color = "outline"
+font_scale = 0.8
+interactive = false
+capsule = false
+
+[widget.levels-divider]
 type = "text"
 text = "│"
 color = "outline"
@@ -36,6 +49,9 @@ capsule = false
 format = "{:%a %d %b  %H:%M}"
 
 [widget.volume]
+show_label = false
+
+[widget.brightness]
 show_label = false
 
 [wallpaper]

@@ -17,7 +17,7 @@
 
 ![Niri and Noctalia desktop](assets/readme/desktop.png)
 
-> Built for **CachyOS / Arch Linux**, **Niri**, and native **Noctalia v5**. The lock-screen placement currently targets a 1920×1080 `eDP-1` display.
+> Built for **CachyOS / Arch Linux**, **Niri**, and native **Noctalia v5**. The lock-screen layout is mirrored across the 1920×1080 `eDP-1` and `HDMI-A-1` outputs.
 
 <a id="features"></a>
 
@@ -29,6 +29,7 @@
 | Shell | Native Noctalia v5 |
 | Bar | Floating capsule, centered clock, media beside workspaces |
 | Connectivity | Wi-Fi and Bluetooth grouped with a subtle divider |
+| Levels | Volume and brightness grouped with a subtle divider |
 | Lock screen | Digital clock, simple audio visualizer, compact unlock card |
 | Launcher | App grid plus calculator, emoji, panels, and session providers |
 | Terminal / shell | Ghostty and Fish |
@@ -142,7 +143,7 @@ Confirm `niri/cfg/autostart.kdl` contains `spawn-at-startup "noctalia"` and that
 <details>
 <summary>The lock-screen widgets are misplaced</summary>
 
-The tracked geometry targets `eDP-1` at 1920×1080. Run `noctalia msg lockscreen-widgets-edit`, reposition the widgets, and exit the editor; the linked `noctalia/settings.toml` updates automatically.
+The tracked geometry mirrors `eDP-1` and `HDMI-A-1` at 1920×1080. Run `noctalia msg lockscreen-widgets-edit`, reposition the widgets, and exit the editor; the linked `noctalia/settings.toml` updates automatically.
 </details>
 
 <details>
